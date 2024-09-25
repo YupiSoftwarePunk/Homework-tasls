@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num, sum1, sum2, value6, value5, value4, value3, value2, value1;
+    int num2, first, second, third, fourth, final_value;
+    int num3, max_number = 0;
+    
+    // number 1
+    cout<<"Введите шестизначное число: ";
+    cin>>num;
+    if (99000<num<1000000)
+    {
+        value6 = num % 10;
+        value5 = (num / 10) % 10;
+        value4 = (num / 100) % 10;
+        sum2 = value6 + value5 + value4;
+        
+        value3 = (num / 1000) % 10;
+        value2 = (num / 10000) % 10;
+        value1 = (num / 100000) % 10;
+        sum1 = value3 + value2 + value2;
+        if (sum1 == sum2)
+        {
+            cout<<"Вы ввели счастливое число"<<endl;
+        }
+        else
+        {
+            cout<<"К сожалению, вы ввели не счастливое число"<<endl;
+        }
+    }
+    else
+    {
+        cout<<"Нужно было ввести шестизначное число"<<endl;
+    }
+    
+    
+    // number 2
+    cout<<"Введите четырехзначное число: ";
+    cin>>num2;
+    if (999<num2<10000)
+    {
+        first = num2 % 1000 / 100;
+        second = num2 / 1000;
+        third = num2 % 10;
+        fourth = num2 % 100 / 10;
+        final_value = first * 1000 + second * 100 + third * 10 + fourth;
+        cout<<final_value;
+    }
+    else
+    {
+        cout<<"Нужно было ввести четырехзначное число"<<endl;
+    }
+    
+    
+    // number 3
+    cout<<"Введите 7 любых чисел через enter:\n";
+    for (int i = 0; i < 7; i++)
+    {
+        cin>>num3;
+        if (num3 > max_number)
+        {
+            max_number = num3;
+        }
+    }
+    cout<<"Максимальное число из всех введенных -> "<<max_number<<endl;
+
+    return 0;
+}
